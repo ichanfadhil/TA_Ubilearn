@@ -105,21 +105,26 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card mdl-shadow--2dp trending">
+                        
+                    </div>
+                </div>
+                
             </div>
         </div>
 		<div class="mdl-cell mdl-cell--9-col">
 		</div>
 
         <!-- REKOMENDASI LS -->
-        <!-- <div class="mdl-cell mdl-cell--3-col">
+        <div class="mdl-cell mdl-cell--3-col">
            <div class="mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title" style="display: block">
                             <button class="btn-dd" style="float: right;" type="button" data-toggle="collapse"
                                     data-target="#demo2"><i class="fa fa-angle-double-down"></i></button>
-                                    <h2 class="mdl-card__title-text">Rekomendasi</h2>
+                                    <h4 style="color:white">Ada rekomendasi nih untuk kamu</h4>
                                     <hr style="background-color: white;"/>
-                                    <p style="color: white">Silahkan membuka rekomendasi ini!</p>
-                                
                         </div>
                         <div id="demo2" class="collapse">
                             <div class="mdl-card__supporting-text">
@@ -128,42 +133,15 @@
                                     <span class="mdl-list__item-primary-content">
                                         <span style="margin-right: 25px;"></span>
                                         <i class="material-icons mdl-list__item-icon">label</i>
-                                        <a href="<?php echo site_url('.#') ?>"
-                                           style="color: white;"><?php echo 'Active/Reflective'?></a>
-                                     </span>
-                                            <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <span class="mdl-list__item-primary-content">
-                                        <span style="margin-right: 25px;"></span>
-                                        <i class="material-icons mdl-list__item-icon">label</i>
-                                        <a href="<?php echo site_url('.#') ?>"
-                                           style="color: white;"><?php echo 'Sensing/Intuitive'?></a>
-                                     </span>
-                                            <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <span class="mdl-list__item-primary-content">
-                                        <span style="margin-right: 25px;"></span>
-                                        <i class="material-icons mdl-list__item-icon">label</i>
-                                        <a href="<?php echo site_url('.#') ?>"
-                                           style="color: white;"><?php echo 'Visual/Verbal'?></a>
-                                     </span>
-                                            <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
-                                </li>
-                                <li class="mdl-list__item">
-                                    <span class="mdl-list__item-primary-content">
-                                        <span style="margin-right: 25px;"></span>
-                                        <i class="material-icons mdl-list__item-icon">label</i>
-                                        <a href="<?php echo site_url('.#') ?>"
-                                           style="color: white;"><?php echo 'Sequence/Global'?></a>
+                                        <a href="<?php echo site_url('siswa/svcq') ?>"
+                                           style="color: white;"><?php echo 'Active/Visual/Sensing/Sequence'?></a>
                                      </span>
                                             <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
                                 </li>
                                 </ul>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
         </div>
     </div>
 </main>

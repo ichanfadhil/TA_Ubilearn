@@ -359,4 +359,103 @@ class C_siswa extends CI_Controller {
         $data['content'] = 'siswa/edit_thread_siswa';
         $this->load->view('layout/master', $data);
     }
+
+    public function svcq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/svcq';
+        $this->load->view('layout/master',$data);
+    }
+    public function svrq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/svrq';
+        $this->load->view('layout/master',$data);
+    }
+    public function svrg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/svrg';
+        $this->load->view('layout/master',$data);
+    }
+    public function svcg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/svcg';
+        $this->load->view('layout/master',$data);
+    }
+    public function sacq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sacq';
+        $this->load->view('layout/master',$data);
+    }
+    public function sarq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sarq';
+        $this->load->view('layout/master',$data);
+    }
+    public function sacg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sacg';
+        $this->load->view('layout/master',$data);
+    }
+    public function sarg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sarg';
+        $this->load->view('layout/master',$data);
+    }
+//intuitive
+    public function nvcq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nvcq';
+        $this->load->view('layout/master',$data);
+    }
+    public function nvrq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nvrq';
+        $this->load->view('layout/master',$data);
+    }
+    public function nvrg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nvrg';
+        $this->load->view('layout/master',$data);
+    }
+    public function nvcg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nvcg';
+        $this->load->view('layout/master',$data);
+    }
+    public function nacq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nacq';
+        $this->load->view('layout/master',$data);
+    }
+    public function narq()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/narq';
+        $this->load->view('layout/master',$data);
+    }
+    public function nacg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/nacg';
+        $this->load->view('layout/master',$data);
+    }
+    public function narg()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/narg';
+        $this->load->view('layout/master',$data);
+    }
+    
 }

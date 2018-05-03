@@ -71,6 +71,7 @@ $route['siswa/Content/countLogContent/(:any)'] = 'siswa/Content/countLogContent/
 $route['siswa/materi/(:any)'] = 'siswa/content/index/$1';
 $route['siswa/content/(:any)'] = 'siswa/content/contents/$1';
 $route['siswa/content/contents/(:any)'] = 'siswa/content/contents/$1';
+
 //forum
 $route['siswa/forum_siswa'] = 'siswa/Forum/index';
 $route['siswa/dashboard_forum_siswa/(:any)'] = 'siswa/forum/dashboard_forum_siswa/$1';
@@ -210,3 +211,26 @@ $route['signup_instruktur'] = 'C_login/signup_instruktur';
 $route['landing_page']= 'C_login/landing_page';
 // logout
 $route['logout'] = 'C_login/logout';
+
+//learning style
+$route['siswa/svcq'] = 'C_siswa/svcq';
+$route['siswa/svrq'] = 'C_siswa/svrq';
+$route['siswa/svrg'] = 'C_siswa/svrg';
+$route['siswa/svcg'] = 'C_siswa/svcg';
+$route['siswa/sacq'] = 'C_siswa/sacq';
+$route['siswa/sarq'] = 'C_siswa/sarq';
+$route['siswa/sacg'] = 'C_siswa/sacg';
+$route['siswa/sarg'] = 'C_siswa/sarg';
+
+$route['siswa/nvcq'] = 'C_siswa/nvcq';
+$route['siswa/nvrq'] = 'C_siswa/nvrq';
+$route['siswa/nvrg'] = 'C_siswa/nvrg';
+$route['siswa/nvcg'] = 'C_siswa/nvcg';
+$route['siswa/nacq'] = 'C_siswa/nacq';
+$route['siswa/narq'] = 'C_siswa/narq';
+$route['siswa/nacg'] = 'C_siswa/nacg';
+$route['siswa/narg'] = 'C_siswa/narg';
+
+
+
+
