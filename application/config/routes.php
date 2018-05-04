@@ -213,23 +213,23 @@ $route['landing_page']= 'C_login/landing_page';
 $route['logout'] = 'C_login/logout';
 
 //learning style
-$route['siswa/svcq'] = 'C_siswa/svcq';
-$route['siswa/svrq'] = 'C_siswa/svrq';
-$route['siswa/svrg'] = 'C_siswa/svrg';
-$route['siswa/svcg'] = 'C_siswa/svcg';
-$route['siswa/sacq'] = 'C_siswa/sacq';
-$route['siswa/sarq'] = 'C_siswa/sarq';
-$route['siswa/sacg'] = 'C_siswa/sacg';
-$route['siswa/sarg'] = 'C_siswa/sarg';
+$route['siswa/svcq/(:any)'] = 'C_siswa/svcq/$1';
+$route['siswa/svrq/(:any)'] = 'C_siswa/svrq/$1';
+$route['siswa/svrg/(:any)'] = 'C_siswa/svrg/$1';
+$route['siswa/svcg/(:any)'] = 'C_siswa/svcg/$1';
+$route['siswa/sacq/(:any)'] = 'C_siswa/sacq/$1';
+$route['siswa/sarq/(:any)'] = 'C_siswa/sarq/$1';
+$route['siswa/sacg/(:any)'] = 'C_siswa/sacg/$1';
+$route['siswa/sarg/(:any)'] = 'C_siswa/sarg/$1';
 
-$route['siswa/nvcq'] = 'C_siswa/nvcq';
-$route['siswa/nvrq'] = 'C_siswa/nvrq';
-$route['siswa/nvrg'] = 'C_siswa/nvrg';
-$route['siswa/nvcg'] = 'C_siswa/nvcg';
-$route['siswa/nacq'] = 'C_siswa/nacq';
-$route['siswa/narq'] = 'C_siswa/narq';
-$route['siswa/nacg'] = 'C_siswa/nacg';
-$route['siswa/narg'] = 'C_siswa/narg';
+$route['siswa/nvcq/(:any)'] = 'C_siswa/nvcq/$1';
+$route['siswa/nvrq/(:any)'] = 'C_siswa/nvrq/$1';
+$route['siswa/nvrg/(:any)'] = 'C_siswa/nvrg/$1';
+$route['siswa/nvcg/(:any)'] = 'C_siswa/nvcg/$1';
+$route['siswa/nacq/(:any)'] = 'C_siswa/nacq/$1';
+$route['siswa/narq/(:any)'] = 'C_siswa/narq/$1';
+$route['siswa/nacg/(:any)'] = 'C_siswa/nacg/$1';
+$route['siswa/narg/(:any)'] = 'C_siswa/narg/$1';
 
 
 

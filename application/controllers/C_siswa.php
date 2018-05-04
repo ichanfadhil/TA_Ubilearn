@@ -360,99 +360,244 @@ class C_siswa extends CI_Controller {
         $this->load->view('layout/master', $data);
     }
 
-    public function svcq()
+    //learning style
+    public function svcq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/svcq';
         $this->load->view('layout/master',$data);
     }
-    public function svrq()
+    public function svrq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/svrq';
         $this->load->view('layout/master',$data);
     }
-    public function svrg()
+    public function svrg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/svrg';
         $this->load->view('layout/master',$data);
     }
-    public function svcg()
+    public function svcg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/svcg';
         $this->load->view('layout/master',$data);
     }
-    public function sacq()
+    public function sacq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/sacq';
         $this->load->view('layout/master',$data);
     }
-    public function sarq()
+    public function sarq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/sarq';
         $this->load->view('layout/master',$data);
     }
-    public function sacg()
+    public function sacg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/sacg';
         $this->load->view('layout/master',$data);
     }
-    public function sarg()
+    public function sarg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/sarg';
         $this->load->view('layout/master',$data);
     }
 //intuitive
-    public function nvcq()
+    public function nvcq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nvcq';
         $this->load->view('layout/master',$data);
     }
-    public function nvrq()
+    public function nvrq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nvrq';
         $this->load->view('layout/master',$data);
     }
-    public function nvrg()
+    public function nvrg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nvrg';
         $this->load->view('layout/master',$data);
     }
-    public function nvcg()
+    public function nvcg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nvcg';
         $this->load->view('layout/master',$data);
     }
-    public function nacq()
+    public function nacq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nacq';
         $this->load->view('layout/master',$data);
     }
-    public function narq()
+    public function narq($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/narq';
         $this->load->view('layout/master',$data);
     }
-    public function nacg()
+    public function nacg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/nacg';
         $this->load->view('layout/master',$data);
     }
-    public function narg()
+    public function narg($lsn_id)
     {
+        $data['course'] = M_Course_Lesson::leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->leftJoin('users','users.usr_id','=','course.usr_id')
+        ->where('course_lesson.lsn_id',$lsn_id)
+        ->first();
+
+        $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/narg';
         $this->load->view('layout/master',$data);
