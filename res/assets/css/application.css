@@ -12117,4 +12117,46 @@ a {
     background-size: cover;
     height: 50vh;
   }
+  .cover-main1 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/dap.jpg') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/dap.jpg') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+  .cover-main2 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/strukdat.png') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/strukdat.png') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+  .cover-main3 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/stack.jpg') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/stack.jpg') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+  .cover-main4 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/queue.jpg') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/queue.jpg') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+  .cover-main5 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/tree.jpg') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/tree.jpg') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
+  .cover-main6 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../images/graph.jpg') right bottom;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../images/graph.jpg') right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+  }
 

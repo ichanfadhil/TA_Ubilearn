@@ -40,6 +40,7 @@ class Content extends CI_Controller {
 
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/course_materi';
+        $data['lsn_id'] = $lsn_id;
         $this->load->view('layout/master',$data);
 
     }

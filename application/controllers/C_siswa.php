@@ -377,6 +377,7 @@ class C_siswa extends CI_Controller {
         // $data['kuis1'] = M_Course_Assesment::where('lsn_id',$lsn_id)->first();
         // $lesen = M_Course_Lesson::where();
         $data['latihan'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
+        $data['lsn_id'] = $lsn_id;
         
         
 

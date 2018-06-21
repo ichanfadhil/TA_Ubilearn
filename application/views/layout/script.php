@@ -82,4 +82,34 @@
     .note-view {
         display: none;
     }
-</style> 
+</style> <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<style>
+  /* Tooltip */
+  .test + .tooltip > .tooltip-inner {
+      background-color: #1E90FF; 
+      color: #FFFFFF; 
+      border: 1px solid #1E90FF; 
+      padding: 10px;
+      font-size: 15px;
+  }
+  /* Tooltip on top */
+  .test + .tooltip.top > .tooltip-arrow {
+      border-top: 5px solid blue;
+  }
+  /* Tooltip on bottom */
+  .test + .tooltip.bottom > .tooltip-arrow {
+      border-bottom: 5px solid blue;
+  }
+  /* Tooltip on left */
+  .test + .tooltip.left > .tooltip-arrow {
+      border-left: 5px solid red;
+  }
+  /* Tooltip on right */
+  .test + .tooltip.right > .tooltip-arrow {
+      border-right: 5px solid black;
+  }
+  </style>

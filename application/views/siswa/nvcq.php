@@ -36,8 +36,8 @@
                     </span>
                     <b class="mdl-list__item-secondary-action"
                         style="margin-right: 0px">
-                        <h5><span class=""><?php echo "Disini kamu bisa melihat <br> materi berupa teks juga loh"; ?></span></h5></b>
-                        <a href="<?php echo site_url('siswa/content/contents/30/') ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
+                        </b>
+                        <a href="<?php echo site_url('siswa/content/contents/35/') ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="large material-icons test" data-toggle="tooltip" data-placement="top" title="Disini kamu bisa melihat materi berupa teks juga loh" style="font-size: 50px;">add_circle</i></a>
                     </li>
                     </ul>
                     <?php endforeach; ?>

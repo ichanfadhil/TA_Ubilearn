@@ -72,6 +72,9 @@ class C_login extends CI_Controller {
 
                 $this->session->set_userdata($user);
 
+                $dataLS = $this->M_Learning_Style->kalkulasi();
+                $this->session->set_userdata("dataLS",$dataLS);
+
                 // Capture Log Start
                 $event = array(
                     'usr_id'            => $this->session->userdata('id'),

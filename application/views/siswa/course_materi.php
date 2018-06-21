@@ -133,8 +133,8 @@
                                     <span class="mdl-list__item-primary-content">
                                         <span style="margin-right: 25px;"></span>
                                         <i class="material-icons mdl-list__item-icon">label</i>
-                                        <a href="<?php echo site_url('siswa/svcq') ?>"
-                                           style="color: white;"><?php echo 'Active/Visual/Sensing/Sequence'?></a>
+                                        <a href="<?php echo site_url('siswa/'.$this->session->userdata("dataLS")."/".$lsn_id) ?>"
+                                           style="color: white;"><?php echo $this->session->userdata("dataLS");?></a>
                                      </span>
                                             <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
                                 </li>
