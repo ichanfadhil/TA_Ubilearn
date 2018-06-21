@@ -7,6 +7,46 @@
             </div>
             <div class="">
                 <h2 style="color:white">Welcome to TelC Learning</h2>
+                <?php
+                $inye = M_Hasil_Kuesioner::where('usr_id', $this->session->userdata('id'))->first();
+
+                $active = $inye->Active; //c
+                $reflective = $inye->Reflective; //r
+                $sensing = $inye->Sensing; //s
+                $intuitive = $inye->Intuitive; //n
+                $visual = $inye->Visual; //v
+                $verbal = $inye->Verbal; //a
+                $sequential = $inye->Sequential; //q
+                $global = $inye->Global; //g
+
+                $ls = "";
+                
+                if ($sensing > $intuitive) {
+                    $ls = $ls."s";
+                } else if ($sensing < $intuitive) {
+                    $ls = $ls."n";
+                }
+
+                if ($visual > $verbal) {
+                    $ls = $ls."v";
+                } else if ($visual < $verbal) {
+                    $ls = $ls."a";
+                }
+
+                if ($active > $reflective) {
+                    $ls = $ls."c";
+                } else if ($active < $reflective) {
+                    $ls = $ls."r";
+                }                
+
+                if ($sequential > $global) {
+                    $ls = $ls."q";
+                } else if ($sequential < $global) {
+                    $ls = $ls."g";
+                }
+
+                echo $ls;
+                ?>
             </div>
         </div>
     </div>

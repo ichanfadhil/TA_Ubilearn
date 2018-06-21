@@ -372,6 +372,14 @@ class C_siswa extends CI_Controller {
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
 
+        $data['forum1'] = M_Course_Forum::where('lsn_id',$lsn_id)->first();
+        // $data['pretest1'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%Tree')->first();
+        // $data['kuis1'] = M_Course_Assesment::where('lsn_id',$lsn_id)->first();
+        // $lesen = M_Course_Lesson::where();
+        $data['latihan'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
+        
+        
+
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/svcq';
         $this->load->view('layout/master',$data);
