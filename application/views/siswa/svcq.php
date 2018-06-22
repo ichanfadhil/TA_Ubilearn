@@ -3,6 +3,16 @@
         background-color: yellow;
     }
 </style>
+<?php
+$var  = 26;
+?>
+    <script>
+    $(function() {
+    $('#anying').change(function() {
+        window.location.href = "<?php echo site_url("siswa/materi/".$var); ?>";
+    })
+  })
+    </script>
 <main class="mdl-layout__content">
     <?php
     if ($lsn_id == 15){
@@ -25,6 +35,7 @@
         <div class="mdl-cell mdl-cell--12-col">
             <h1 style="color:white"><?php echo $course->crs_name ?></h1><br>
             <p style="color:white"><?php echo $course->usr_firstname . ' ' . $course->usr_lastname ?></p>
+            <input id="anying" type="checkbox" checked data-toggle="toggle" data-on="Mode Rekomendasi" data-off="Mode biasa" data-onstyle="success" data-offstyle="danger">
         </div>
 </div>
 <div class="mdl-grid">
