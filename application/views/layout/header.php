@@ -61,5 +61,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 <!-- MODOL SWITCH -->
+<!-- <link href="<?php echo base_url(); ?>res/assets/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="<?php echo base_url(); ?>res/assets/js/bootstrap-toggle.min.js" rel="stylesheet"> -->
+
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

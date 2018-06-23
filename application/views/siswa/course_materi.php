@@ -6,16 +6,32 @@
 <script>
     $(function() {
     $('#anying1').change(function() {
-        window.location.href = "<?php echo site_url("siswa/svcq/26"); ?>";
+        window.location.href = "<?php if($this->session->userdata("dataLS") == "sacq"){echo site_url("siswa/sacq/26");}
+        else if($this->session->userdata("dataLS") == "svcq"){echo site_url("siswa/svcq/26");}
+        else if($this->session->userdata("dataLS") == "sarg"){echo site_url("siswa/sarg/26");}
+        else if($this->session->userdata("dataLS") == "sarq"){echo site_url("siswa/sarq/26");}
+        else if($this->session->userdata("dataLS") == "narq"){echo site_url("siswa/narq/26");}
+        else if($this->session->userdata("dataLS") == "narg"){echo site_url("siswa/narg/26");}
+        else if($this->session->userdata("dataLS") == "nacq"){echo site_url("siswa/nacq/26");}
+        else if($this->session->userdata("dataLS") == "nacg"){echo site_url("siswa/nacg/26");}
+        else if($this->session->userdata("dataLS") == "svcg"){echo site_url("siswa/svcg/26");}
+        else if($this->session->userdata("dataLS") == "svrg"){echo site_url("siswa/svrg/26");}
+        else if($this->session->userdata("dataLS") == "svrq"){echo site_url("siswa/svrq/26");}
+        else if($this->session->userdata("dataLS") == "nvrq"){echo site_url("siswa/nvrq/26");}
+        else if($this->session->userdata("dataLS") == "nvrg"){echo site_url("siswa/nvrg/26");}
+        else if($this->session->userdata("dataLS") == "nvcq"){echo site_url("siswa/nvcq/26");}
+        else if($this->session->userdata("dataLS") == "nvcg"){echo site_url("siswa/nvcg/26");} ?>";
     })
   })
     </script>
 <main class="mdl-layout__content">
     <div class="mdl-grid cover-main">
         <div class="mdl-cell mdl-cell--12-col">
-            <h1 style="color:white"><?php echo $course->crs_name ?></h1><br>
-            <p style="color:white"><?php echo $course->usr_firstname . ' ' . $course->usr_lastname ?></p>
-            <input id="anying1" name="databutton" type="checkbox" data-toggle="toggle"  data-on="Mode Rekomendasi" data-off="Mode biasa" data-onstyle="success" data-offstyle="danger">
+            <h1 style="color:white; text-align:center;"><?php echo $course->crs_name ?></h1><br>
+            <p style="color:white; text-align:center;"><?php echo $course->usr_firstname . ' ' . $course->usr_lastname ?></p>
+            <div style="text-align:center">
+            <input id="anying1" name="databutton" type="checkbox" data-toggle="toggle"  data-on="Mode<br> Rekomendasi" data-off="Mode<br> Biasa" data-onstyle="success" data-offstyle="danger">
+            </div>
         </div>
     </div>
     <div class="mdl-grid">
