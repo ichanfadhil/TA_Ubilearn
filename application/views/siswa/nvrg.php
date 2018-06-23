@@ -14,23 +14,6 @@ $var  = 26;
   })
     </script>
 <main class="mdl-layout__content">
-<?php
-    if ($lsn_id == 15){
-        $a = "cover-main1";
-    }else if($lsn_id == 16){
-        $a = "cover-main2";
-    }else if($lsn_id == 24){
-        $a = "cover-main3";
-    }else if($lsn_id == 25){
-        $a = "cover-main4";
-    }else if($lsn_id == 26){
-        $a = "cover-main5";
-    }else if($lsn_id == 27){
-        $a = "cover-main6";
-    }else{
-        $a = "cover-main";
-    }
-    ?>
 <div class="mdl-grid" style="align:center;">
         <div class="mdl-cell mdl-cell--12-col">
         <h1 style="color:white; text-align:center;"><?php echo $course->crs_name ?></h1><br>
@@ -79,9 +62,12 @@ $var  = 26;
         <div class="mdl-card mdl-shadow--2dp trending">
             <div class="mdl-card__title" style="display: block">
             <p style="color: white">YUK! Catat disini aja materinya..</p>
-            <textarea rows="4" cols="50" style="background-color: white;color:#000;">
+            <textarea rows="4" cols="35" style="background-color: white;color:#000;">
                     Material Board
-                    </textarea>
+            </textarea>
+                <div class="form-group">
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
+                </div>
                 <hr style="background-color: white;"/>
                 <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
                 <button class="btn-dd" style="float: right;" type="button" data-toggle="collapse"
