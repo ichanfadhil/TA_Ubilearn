@@ -72,8 +72,7 @@ class C_login extends CI_Controller {
 
                 $this->session->set_userdata($user);
 
-                $dataLS = $this->M_Learning_Style->kalkulasi();
-                $this->session->set_userdata("dataLS",$dataLS);
+               
 
                 // Capture Log Start
                 $event = array(
@@ -108,6 +107,8 @@ class C_login extends CI_Controller {
                         $this->session->set_userdata('ls',1);
                         $this->session->set_userdata('tr',1);
                     }
+                    $dataLS = $this->M_Learning_Style->kalkulasi($this->session->userdata('id'));
+                    $this->session->set_userdata("dataLS",$dataLS);
                     redirect('siswa/dashboard');
                 }
                 else if ($this->session->userdata('level')==3)
