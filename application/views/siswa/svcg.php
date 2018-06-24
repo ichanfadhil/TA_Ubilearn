@@ -2,6 +2,47 @@
     mark {
         background-color: yellow;
     }
+    blockquote{
+  font-size: 1.1em;
+  width:100%;
+  margin:16px auto;
+  font-family:Roboto;
+  font-style:italic;
+  color: #FFF;
+  padding:1.2em 30px 1.2em 48px;
+  border-left:8px solid #FFF ;
+  border-right:8px solid #FFF ;
+  line-height:1.6;
+  position: relative;
+}
+
+blockquote::before{
+  font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+
+blockquote::after{
+    font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
 </style>
 <?php
 $var  = 26;
@@ -60,7 +101,7 @@ $var  = 26;
 <div class="mdl-cell mdl-cell--3-col">
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                    <div class="mdl-card mdl-shadow--2dp trending">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title" style="display: block">
                         <a href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons" style="color: white;">chat_bubble_outline</i></a>
                             <h1 class="mdl-card__title-text">YUK !</h1>
@@ -71,15 +112,18 @@ $var  = 26;
                         data-target="#demo2"><i class="fa fa-angle-double-down"></i></button>
                         
                         </div>
-                       
+                        
                         <div id="demo2" class="collapse">
-                            <div class="mdl-card__supporting-text">
-                                <textarea rows="4" cols="50" style="background-color: white;color:#000;">
-                                Material Board
-                                </textarea>
-                            </div>
+                        <div class="mdl-card__supporting-text">
+                        <p style="color: white">YUK! Catat disini aja materinya..</p>
+            <center><textarea rows="4" cols="55" style="background-color: white;color:#000;">
+                    .....
+            </textarea></center>
+                <div class="form-group">
+               <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
+                </div>
                         </div>
-
+</div>
                     </div>
     </div>
 	</div>
@@ -90,8 +134,10 @@ $var  = 26;
         <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
             <div class="mdl-card mdl-shadow--2dp trending">
                 <div class="mdl-card__title" style="display: block">
-					<h6 style="color:white">Silahkan menggunakan langkah sendiri untuk memamahami materi tree.</h6>
-                </div>
+                <blockquote><center>
+                Silahkan menggunakan langkah sendiri untuk memamahami materi tree.
+                </blockquote></center>               
+                 </div>
             </div>
         </div>
     </div>

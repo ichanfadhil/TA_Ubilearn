@@ -2,6 +2,47 @@
     mark {
         background-color: yellow;
     }
+    blockquote{
+  font-size: 1.1em;
+  width:100%;
+  margin:16px auto;
+  font-family:Roboto;
+  font-style:italic;
+  color: #FFF;
+  padding:1.2em 30px 1.2em 48px;
+  border-left:8px solid #FFF ;
+  border-right:8px solid #FFF ;
+  line-height:1.6;
+  position: relative;
+}
+
+blockquote::before{
+  font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+
+blockquote::after{
+    font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
 </style>
 <?php
 $var  = 26;
@@ -49,6 +90,63 @@ $var  = 26;
                 </li>
                 </ul>
                 <?php endforeach; ?>
+                <?php
+                        foreach ($contents_example as $content): ?>    
+                <ul class="mdl-list" style="margin: 15px;" >
+                    <li class="mdl-list__item" style="background-color: #0d0d0d">
+                    <span class="mdl-list__item-primary-content">
+                    <a href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id)?>">
+                  
+                    <i class="material-icons mdl-list__item-icon" style="font-size: 30px; color: white;"><?php echo "attachment"?></i>   
+                  
+                   </a>
+                <span class="mdl-list__item-primary-content">
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id) ?>" ><span style="color:white" style="margin-left:10px; margin-bottom:10px">[ EXAMPLE ]&nbsp;&nbsp;<?php echo $content->cnt_name ?></span></a>
+                </span>
+                </span>
+                </li>
+                </ul>
+                <?php endforeach; ?>
+
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--3-col-tablet mdl-cell--8-col-phone">
+</div>
+            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--8-col-phone">
+                <div class="mdl-card mdl-shadow--2dp trending" >
+                    <div class="mdl-card__title">
+                        <h5 style="color:white">Ada latihan soal menarik buat kamu nih</h5>
+                        <button class="btn-dd" type="button" data-toggle="collapse"
+            data-target="#demo4" style="
+    margin-left: 150px;"><i class="fa fa-angle-double-down" ></i></button>
+                    </div>
+                    <div id="demo4" class="collapse">
+                <div class="mdl-card__supporting-text" >
+                <ul class="mdl-list">
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/13/') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
+                </span>
+                </li>
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <a style="text-decoration:none;" href="#" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
+                </span>
+                </li>
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
+                </span>
+                </li>
+                
+               
+            </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--3-col-tablet mdl-cell--8-col-phone">
+</div>
 
                 </div>
             </div>
@@ -63,7 +161,7 @@ $var  = 26;
             <div class="mdl-card__title" style="display: block">
             <p style="color: white">YUK! Catat disini aja materinya..</p>
             <textarea rows="4" cols="35" style="background-color: white;color:#000;">
-                    Material Board
+                    ....
             </textarea>
                 <div class="form-group">
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
@@ -79,7 +177,7 @@ $var  = 26;
                 <div class="mdl-card__supporting-text">
                 <ul class="mdl-list">
     <li class="mdl-list__item">
-    <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Menuju forum diskusi..</span></a>
+    <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Menuju forum diskusi..</span><i class="material-icons" style="color: white; font-size:30px;">chat_bubble_outline</i></a>
     </li>
     </ul>
               
@@ -96,7 +194,10 @@ $var  = 26;
         <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
             <div class="mdl-card mdl-shadow--2dp trending">
                 <div class="mdl-card__title" style="display: block">
-					<h6 style="color:white">Silahkan menggunakan langkah sendiri untuk memamahami materi tree.</h6>
+                <blockquote><center>
+                Silahkan menggunakan langkah sendiri untuk memamahami materi tree.
+                </blockquote></center>
+					<!-- <h6 style="color:white">Silahkan menggunakan langkah sendiri untuk memamahami materi tree.</h6> -->
                 </div>
             </div>
         </div>

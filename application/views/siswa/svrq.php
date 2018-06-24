@@ -2,6 +2,47 @@
     mark {
         background-color: yellow;
     }
+    blockquote{
+  font-size: 0.8em;
+  width:100%;
+  margin:16px auto;
+  font-family:Roboto;
+  font-style:italic;
+  color: #FFF;
+  padding:1.2em 30px 1.2em 48px;
+  border-left:8px solid #FFF ;
+  border-right:8px solid #FFF ;
+  line-height:1.6;
+  position: relative;
+}
+
+blockquote::before{
+  font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+
+blockquote::after{
+    font-family:FontAwesome;
+  content: "\f10e";
+  font-size: 1.1em;
+  color:#FFF;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
 </style>
 <?php
 $var  = 26;
@@ -62,38 +103,39 @@ $var  = 26;
 </div>   
 <!-- col active -->
 <div class="mdl-cell mdl-cell--3-col">
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                    <div class="mdl-card mdl-shadow--2dp trending">
-                        <div class="mdl-card__title" style="display: block">
-                        <p style="color: white">YUK! Catat disini aja materinya..</p>
-                        <textarea rows="4" cols="35" style="background-color: white;color:#000;">
-                    Material Board
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <div class="mdl-card mdl-shadow--2dp trending">
+            <div class="mdl-card__title" style="display: block">
+            <p style="color: white">YUK! Catat disini aja materinya..</p>
+            <textarea rows="4" cols="35" style="background-color: white;color:#000;">
+                    ....
             </textarea>
                 <div class="form-group">
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
                 </div>
-                            <hr style="background-color: white;"/>
-                            <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
-                            <button class="btn-dd" style="float: right;" type="button" data-toggle="collapse"
-                        data-target="#demo2"><i class="fa fa-angle-double-down"></i></button>
-                        
-                        </div>
-                       
-                        <div id="demo2" class="collapse">
-                            <div class="mdl-card__supporting-text">
-                            <ul class="mdl-list">
-                <li class="mdl-list__item">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Menuju forum diskusi..</span></a>
-                </li>
-                </ul>
-                            </div>
-                        </div>
+                <hr style="background-color: white;"/>
+                <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
+                <button class="btn-dd" style="float: right;" type="button" data-toggle="collapse"
+            data-target="#demo2"><i class="fa fa-angle-double-down"></i></button>
+            
+            </div>
+           
+            <div id="demo2" class="collapse">
+                <div class="mdl-card__supporting-text">
+                <ul class="mdl-list">
+    <li class="mdl-list__item">
+    <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Menuju forum diskusi..</span><i class="material-icons" style="color: white; font-size:30px;">chat_bubble_outline</i></a>
+    </li>
+    </ul>
+              
+                </div>
+            </div>
 
-                    </div>
-    </div>
-	</div>
-	</div>
+        </div>
+</div>
+</div>
+</div>
 	
 <div class="mdl-cell mdl-cell--5-col">
         <div class="mdl-grid">
@@ -141,8 +183,10 @@ $var  = 26;
                 <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                     <div class="mdl-card mdl-shadow--2dp trending">
                         <div class="mdl-card__title" style="display: block">
-								<h6 style="color:white">Silahkan menggunakan langkah sendiri untuk memamahami materi tree.</h6>
-                        </div>
+                        <blockquote><center>
+                        Silahkan menggunakan langkah sendiri untuk memamahami materi tree.
+                        </blockquote></center>
+                                                </div>
 
                     </div>
     </div>

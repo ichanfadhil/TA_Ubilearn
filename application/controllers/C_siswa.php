@@ -553,7 +553,12 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
+
 
 
         $data['sidebar'] = 'layout/sidebar';
