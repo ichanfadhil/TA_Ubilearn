@@ -90,7 +90,63 @@ $var  = 26;
                 </li>
                 </ul>
                 <?php endforeach; ?>
+<?php
+foreach ($contents_example as $content): ?>    
+                <ul class="mdl-list" style="margin: 15px;" >
+                    <li class="mdl-list__item" style="background-color: #0d0d0d">
+                    <span class="mdl-list__item-primary-content">
+                    <a href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id)?>">
+                  
+                    <i class="material-icons mdl-list__item-icon" style="font-size: 30px; color: white;"><?php echo "attachment"?></i>   
+                  
+                   </a>
+                <span class="mdl-list__item-primary-content">
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id) ?>" ><span style="color:white" style="margin-left:10px; margin-bottom:10px">[ EXAMPLE ]&nbsp;&nbsp;<?php echo $content->cnt_name ?></span></a>
+                </span>
+                </span>
+                </li>
+                </ul>
+                <?php endforeach; ?>
 
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--3-col-tablet mdl-cell--8-col-phone">
+</div>
+            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--8-col-phone">
+                <div class="mdl-card mdl-shadow--2dp trending" >
+                    <div class="mdl-card__title">
+                        <h5 style="color:white">Ada latihan soal menarik buat kamu nih</h5>
+                        <button class="btn-dd" type="button" data-toggle="collapse"
+            data-target="#demo4" style="
+    margin-left: 150px;"><i class="fa fa-angle-double-down" ></i></button>
+                    </div>
+                    <div id="demo4" class="collapse">
+                <div class="mdl-card__supporting-text" >
+                <ul class="mdl-list">
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing1') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
+                </span>
+                </li>
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing2') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
+                </span>
+                </li>
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing3') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
+                </span>
+                </li>
+                
+               
+            </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--3-col-tablet mdl-cell--8-col-phone">
+</div>
                 </div>
             </div>
         </div>

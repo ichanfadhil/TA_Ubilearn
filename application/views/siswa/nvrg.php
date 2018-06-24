@@ -124,17 +124,17 @@ $var  = 26;
                 <ul class="mdl-list">
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/13/') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/intuitive1') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="#" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/intuitive2') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/intuitive3') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
                 </span>
                 </li>
                 

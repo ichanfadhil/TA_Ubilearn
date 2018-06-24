@@ -312,11 +312,43 @@ class C_siswa extends CI_Controller {
 
     }
 
-
-    public function remedial()
+//sensing
+    public function latihanSensing1()
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/remedial';
+        $data['content'] = 'siswa/sensing1';
+        $this->load->view('layout/master', $data);
+    }
+    public function latihanSensing2()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sensing2';
+        $this->load->view('layout/master', $data);
+    }
+    public function latihanSensing3()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/sensing3';
+        $this->load->view('layout/master', $data);
+    }
+
+    //intuitive
+    public function latihanIntuitive1()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/intuitive1';
+        $this->load->view('layout/master', $data);
+    }
+    public function latihanIntuitive2()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/intuitive2';
+        $this->load->view('layout/master', $data);
+    }
+    public function latihanIntuitive3()
+    {
+        $data['sidebar'] = 'layout/sidebar';
+        $data['content'] = 'siswa/intuitive3';
         $this->load->view('layout/master', $data);
     }
     public function pretest()
@@ -377,6 +409,9 @@ class C_siswa extends CI_Controller {
         // $data['kuis1'] = M_Course_Assesment::where('lsn_id',$lsn_id)->first();
         // $lesen = M_Course_Lesson::where();
         $data['latihan'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
         
         
@@ -395,6 +430,9 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -412,6 +450,9 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -429,6 +470,9 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -446,6 +490,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
         $data['sidebar'] = 'layout/sidebar';
@@ -462,6 +509,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -479,6 +529,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -496,6 +549,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
         $data['sidebar'] = 'layout/sidebar';
@@ -519,6 +575,9 @@ class C_siswa extends CI_Controller {
         // $data['kuis1'] = M_Course_Assesment::where('lsn_id',$lsn_id)->first();
         // $lesen = M_Course_Lesson::where();
         $data['latihan'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -536,6 +595,9 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -575,6 +637,9 @@ class C_siswa extends CI_Controller {
         $data['contents_video'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Video')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -592,6 +657,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -609,6 +677,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -626,6 +697,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
@@ -643,6 +717,9 @@ class C_siswa extends CI_Controller {
         $data['contents_teks'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
         ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
         ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Text')->get();
+        $data['contents_example'] = M_Course_Content::leftJoin('course_lesson','course_lesson.lsn_id','=','course_content.lsn_id')
+        ->leftJoin('course','course.crs_id','=','course_lesson.crs_id')
+        ->where('course_content.lsn_id',$lsn_id)->where('course_content.cnt_type','Example')->get();
         $data['lsn_id'] = $lsn_id;
 
 
