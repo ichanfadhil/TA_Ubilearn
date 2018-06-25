@@ -66,6 +66,11 @@ blockquote span{
                 <h2 style="align:center" class="mdl-card__title-text"><?php echo strip_tags($kontent->cnt_name) ?></h2>
             </div>
             <div class="mdl-card__supporting-text">
+            <audio controls>
+                <source src="<?php echo base_url();?>res/assets/lagu.mp3" type="audio/ogg">
+                <source src="<?php echo base_url();?>res/assets/lagu.mp3 " type="audio/mpeg">
+                cek audio
+            </audio>
                 <blockquote>
                 Lelah dalam belajar itu biasa, tapi jangan menyerah dalam belajar. Orang yang tidak punya cita-cita bagaikan burung tanpa sayap.
                 </blockquote>
