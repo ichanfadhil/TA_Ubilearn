@@ -1,3 +1,40 @@
+<?php
+    $bg_content = array(
+    "http://localhost/TA_Uler/res/assets/images/konten/konten.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten2.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten3.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten4.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten5.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten6.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten7.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten8.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten9.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten10.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten11.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten12.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten13.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten14.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten15.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten16.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten17.png",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten18.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten19.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten21.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten22.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten23.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten24.png",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten25.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten26.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-graph.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-graph1.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-rekursif.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-tree.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-tree2.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-tree3.jpg",
+    "http://localhost/TA_Uler/res/assets/images/konten/konten-tree4.jpg"
+);
+
+?>
 <style>
     mark {
         background-color: yellow;
@@ -45,7 +82,15 @@ blockquote span{
 }
 </style>
 <?php
-$var  = 26;
+$var  =  $course->lsn_id;
+
+function get_text_content($type, $name) {
+    $euy = M_Course_Content::select('cnt_id', 'cnt_name', 'cnt_type')
+                    ->where('cnt_name','=',$name)
+                    ->where('cnt_type','=',$type)->first();
+
+    return $euy;
+}
 ?>
     <script>
     $(function() {
@@ -80,7 +125,7 @@ $var  = 26;
                         <span class="mdl-list__item-primary-content">
                         <i class="material-icons mdl-list__item-icon" style="font-size: 30px; color: white;"><?php echo "play_circle_filled"?></i>
                         <a href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id)?>">
-                       <img src="<?php echo site_url();?>/res/assets/images/hal.png" align="center" alt="contoh" style="width: 1000px; height: 100px;">
+                       <img src="<?php echo "https://img.youtube.com/vi/".substr($content->cnt_source,32)."/hqdefault.jpg" ?>" align="center" alt="contoh" style="width: 1000px; height: 100px;">
                        </a>
                     &nbsp; <?php echo $content->cnt_name ?>
                     
@@ -88,7 +133,7 @@ $var  = 26;
                     <b class="mdl-list__item-secondary-action"
                     style="margin-right: 0px">
                     </b>
-                    <a href="<?php echo site_url('siswa/content/contents/35/') ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="large material-icons test" data-toggle="tooltip" data-placement="top" title="Disini kamu bisa melihat materi berupa teks juga loh" style="font-size: 40px; color: white;">text_fields</i></a>
+                    <a href="<?php echo site_url('siswa/content/contents/' . get_text_content("Text", $content->cnt_name)->cnt_id); ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="large material-icons test" data-toggle="tooltip" data-placement="top" title="Disini kamu bisa melihat materi berupa teks juga loh" style="font-size: 40px; color: white;">text_fields</i></a>
                     </li>
                     </li>
                     </ul>
@@ -162,7 +207,7 @@ foreach ($contents_example as $content): ?>
                 <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title" style="display: block">
-                        <a href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons" style="color: white;">chat_bubble_outline</i></a>
+                        <a href="<?php echo site_url('siswa/list_thread_siswa/'.$forum1->cfr_id); ?>" class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons" style="color: white;">chat_bubble_outline</i></a>
                             <h1 class="mdl-card__title-text">YUK !</h1>
                             <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
                             <hr style="background-color: white;"/>
