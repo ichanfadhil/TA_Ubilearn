@@ -45,7 +45,7 @@ blockquote span{
 }
 </style>
 <?php
-$var  = 26;
+$var  = $course->lsn_id;
 ?>
     <script>
     $(function() {

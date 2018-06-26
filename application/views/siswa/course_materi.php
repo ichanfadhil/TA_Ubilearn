@@ -6,21 +6,22 @@
 <script>
     $(function() {
     $('#anying1').change(function() {
-        window.location.href = "<?php if($this->session->userdata("dataLS") == "sacq"){echo site_url("siswa/sacq/26");}
-        else if($this->session->userdata("dataLS") == "svcq"){echo site_url("siswa/svcq/26");}
-        else if($this->session->userdata("dataLS") == "sarg"){echo site_url("siswa/sarg/26");}
-        else if($this->session->userdata("dataLS") == "sarq"){echo site_url("siswa/sarq/26");}
-        else if($this->session->userdata("dataLS") == "narq"){echo site_url("siswa/narq/26");}
-        else if($this->session->userdata("dataLS") == "narg"){echo site_url("siswa/narg/26");}
-        else if($this->session->userdata("dataLS") == "nacq"){echo site_url("siswa/nacq/26");}
-        else if($this->session->userdata("dataLS") == "nacg"){echo site_url("siswa/nacg/26");}
-        else if($this->session->userdata("dataLS") == "svcg"){echo site_url("siswa/svcg/26");}
-        else if($this->session->userdata("dataLS") == "svrg"){echo site_url("siswa/svrg/26");}
-        else if($this->session->userdata("dataLS") == "svrq"){echo site_url("siswa/svrq/26");}
-        else if($this->session->userdata("dataLS") == "nvrq"){echo site_url("siswa/nvrq/26");}
-        else if($this->session->userdata("dataLS") == "nvrg"){echo site_url("siswa/nvrg/26");}
-        else if($this->session->userdata("dataLS") == "nvcq"){echo site_url("siswa/nvcq/26");}
-        else if($this->session->userdata("dataLS") == "nvcg"){echo site_url("siswa/nvcg/26");} ?>";
+        window.location.href = "<?php if
+        ($this->session->userdata("dataLS") == "sacq"){echo site_url('siswa/sacq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "svcq"){echo site_url('siswa/svcq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "sarg"){echo site_url('siswa/sarg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "sarq"){echo site_url('siswa/sarq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "narq"){echo site_url('siswa/narq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "narg"){echo site_url('siswa/narg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nacq"){echo site_url('siswa/nacq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nacg"){echo site_url('siswa/nacg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "svcg"){echo site_url('siswa/svcg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "svrg"){echo site_url('siswa/svrg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "svrq"){echo site_url('siswa/svrq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nvrq"){echo site_url('siswa/nvrq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nvrg"){echo site_url('siswa/nvrg/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nvcq"){echo site_url('siswa/nvcq/' . $course->lsn_id);}
+        else if($this->session->userdata("dataLS") == "nvcg"){echo site_url('siswa/nvcg/' . $course->lsn_id);} ?>";
     })
   })
     </script>
@@ -60,7 +61,7 @@
                                                 <?php
                                                 if (in_array($content->cnt_id, $cnt_lg)) {
                                                 ?>
-                                                    <span class="label label-success" style="margin-left:20px ">Target Pembelajaran</span>
+                                                    <span class="label label-success" style="margin-left:20px ">Rekomendasi</span>
                                                 <?php
                                                 }
                                                 ?>

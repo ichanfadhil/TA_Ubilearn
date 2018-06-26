@@ -5,7 +5,9 @@
                 <div class="">
                     <h2 style="color:white"><?php echo $course->crs_name ?></h2>
                     <h3 style="color:white"><?php echo $course->usr_kode ?></h3>
-                    <?php echo $this->session->userdata('tipekonten') ?>
+                    <?php 
+                    // print_r($lesson_lg);
+                    echo $this->session->userdata('tipekonten') ?>
                 </div>
             </div>
         </div>
@@ -36,6 +38,7 @@
                     <select id="selectLoc" class="js-example-placeholder-single mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone" name="state">
                         <option value="AL">Semua</option>    
                         <?php 
+                        
                         foreach ($loc as $lo): ?>
                         <option <?php 
                         if ($learning_goal !== NULL) {
@@ -74,6 +77,12 @@
                                 <ul class="demo-list-icon mdl-list">
                                     <?php if (count($lesson) != 0):?>
                                         <?php
+                                        
+                                        $lsn_lg = array();
+                                        foreach ($lesson_lg as $lg):
+                                            $lsn_lg[] = $lg->lsn_id;
+                                        endforeach;
+                                        
                                         $num = 1;
                                         foreach ($lesson as $lessons):?>
                                             <li class="mdl-list__item">
@@ -81,8 +90,18 @@
                                             <span style="margin-right: 25px;"><?php echo $num++ ?> </span>
                                             <i class="material-icons mdl-list__item-icon">label</i>
                                             <a href="<?php echo site_url('siswa/content/log_lesson/' . $lessons->lsn_id) ?>"
-                                               style="<?php echo $lsnAccessColor[$num-2] ?>"><?php echo 'Materi - ' . $lessons->lsn_name ?></a>
-                                        </span>
+                                               style="<?php echo $lsnAccessColor[$num-2] ?>; text-decoration:none;">
+                                               <?php echo 'Materi - ' . $lessons->lsn_name;
+
+                                               if (in_array($lessons->lsn_id, $lsn_lg)) {
+                                               ?>
+                                                <span class="label label-success" style="margin-left:20px ">Rekomendasi</span>
+                                                
+                                                <?php
+                                                }
+                                                ?>
+                                                </a>
+                                                </span>
                                                 <b class="mdl-list__item-secondary-action" style="margin-right:50px"></b>
                                             </li>
                                         <?php endforeach; ?>
@@ -250,3 +269,4 @@ $(document).ready(function() {
 
 
 </script>
+

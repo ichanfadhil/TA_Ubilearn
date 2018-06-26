@@ -475,10 +475,13 @@ class Course extends CI_Controller {
     {
        $data['course'] = M_Course::leftJoin("users","users.usr_id","=","course.usr_id")
                            ->where('crs_id',$crs_id)->first();
-       $data['lesson'] = M_Course_Lesson::where('crs_id',$crs_id)->get();
+       $data['lesson'] = M_Course_Lesson::where('crs_id',$crs_id)->orderBy('lsn_name','ASC')->get();
        $data['loc'] = M_Course_Learning_Outcomes::where('crs_id',$crs_id)->get();
        $data['learning_goal'] = M_learning_Goal::where('usr_id',$this->session->userdata('id'))->first();
        $data['jml_lesson'] = $data['lesson']->count();
+       $data['lesson_lg'] = M_Course_Lesson::select("course_lesson.lsn_id")->leftJoin("course_content", "course_content.lsn_id","=","course_lesson.lsn_id")
+                                ->leftJoin("learning_goals","learning_goals.loc_id","=","course_content.loc_id")
+                                ->where('usr_id',$this->session->userdata('id'))->distinct('lsn_id')->get();
         if (count($data['lesson']) != 0){
             $i = 0;
             foreach($data['lesson'] as $c){
