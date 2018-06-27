@@ -59,10 +59,11 @@
                 </p>
                 <hr style="color: white" />
                 <ul class="mdl-list pull-left">
-                        
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/'.$this->session->userdata("dataLS")."/".$lsn_id) ?>" >
+      
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-blue" data-upgraded=",MaterialButton,MaterialRipple">
                                 Simpan Jawaban
-                            <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 189.298px; height: 189.298px; transform: translate(-50%, -50%) translate(41px, 13px);"></span></span></button>
+                            <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 189.298px; height: 189.298px; transform: translate(-50%, -50%) translate(41px, 13px);"></span></span></button></a>
                        
                     </ul>
                    

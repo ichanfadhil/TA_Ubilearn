@@ -93,13 +93,13 @@ $route['siswa/assesment_info/(:any)'] = 'siswa/assesment/index/$1';
 //result assesment/exercise
 $route['siswa/result/(:any)'] = 'siswa/assesment/result/$1';
 //$route['siswa/pretest'] = 'C_siswa/pretest';
-$route['siswa/intuitive1'] = 'C_siswa/latihanIntuitive1';
-$route['siswa/intuitive2'] = 'C_siswa/latihanIntuitive2';
-$route['siswa/intuitive3'] = 'C_siswa/latihanIntuitive3';
+$route['siswa/intuitive1(:any)'] = 'C_siswa/latihanIntuitive1/$1';
+$route['siswa/intuitive2(:any)'] = 'C_siswa/latihanIntuitive2/$1';
+$route['siswa/intuitive3(:any)'] = 'C_siswa/latihanIntuitive3/$1';
 
-$route['siswa/sensing1'] = 'C_siswa/latihanSensing1';
-$route['siswa/sensing2'] = 'C_siswa/latihanSensing2';
-$route['siswa/sensing3'] = 'C_siswa/latihanSensing3';
+$route['siswa/sensing1/(:any)'] = 'C_siswa/latihanSensing1/$1';
+$route['siswa/sensing2(:any)'] = 'C_siswa/latihanSensing2/$1';
+$route['siswa/sensing3(:any)'] = 'C_siswa/latihanSensing3/$1';
 
 //$route['siswa/materi'] = 'C_siswa/course_materi';
 

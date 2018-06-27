@@ -172,12 +172,20 @@ function get_text_content($type, $name) {
         <div class="mdl-card mdl-shadow--2dp trending">
             <div class="mdl-card__title" style="display: block">
             <p style="color: white">YUK! Catat disini aja materinya..</p>
-            <textarea rows="4" cols="35" style="background-color: white;color:#000;">
-                    ....
+            <form method="post" action="<?php echo base_url().'siswa/Content/notes_nvrq/'.$lsn_id?>">
+            <?php
+            $getnotes=M_User::select('usr_notes')->where('usr_id',$this->session->userdata('id'))->first();
+            ?>
+            <textarea rows="4" cols="35" style="background-color: white;color:#000;" name="notes">
+                    <?php
+                    echo $getnotes->usr_notes;
+                    ?>
             </textarea>
+            
                 <div class="form-group">
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
                 </div>
+                </form>
                 <hr style="background-color: white;"/>
                 <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
                 <button class="btn-dd" style="float: right;" type="button" data-toggle="collapse"

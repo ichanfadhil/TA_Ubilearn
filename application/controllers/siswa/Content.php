@@ -247,12 +247,85 @@ class Content extends CI_Controller {
         redirect(site_url('siswa/materi/' . $lsn_id));
     }
 
-    public function notes($lsn_id){
+    public function notes_svrq($lsn_id){
         $noteya = $this->input->post('notes');
         $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
         redirect(site_url('siswa/svrq/'. $lsn_id));
     }
-
-
-
+    public function notes_svrg($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/svrg/'. $lsn_id));
+    }
+    public function notes_svcg($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/svcg/'. $lsn_id));
+    }
+    public function notes_svcq($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/svcq/'. $lsn_id));
+    }
+    public function notes_sacq($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/sacq/'. $lsn_id));
+    }
+    public function notes_sacg($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/sacg/'. $lsn_id));
+    }
+    public function notes_sarg($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/sarg/'. $lsn_id));
+    }
+    public function notes_sarq($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/sarq/'. $lsn_id));
+    }
+//
+public function notes_nvrq($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nvrq/'. $lsn_id));
+}
+public function notes_nvrg($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nvrg/'. $lsn_id));
+}
+public function notes_nvcg($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nvcg/'. $lsn_id));
+}
+public function notes_nvcq($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nvcq/'. $lsn_id));
+}
+public function notes_nacq($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nacq/'. $lsn_id));
+}
+public function notes_nacg($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/nacg/'. $lsn_id));
+}
+public function notes_narg($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/narg/'. $lsn_id));
+}
+public function notes_narq($lsn_id){
+    $noteya = $this->input->post('notes');
+    $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+    redirect(site_url('siswa/narq/'. $lsn_id));
+}
 }

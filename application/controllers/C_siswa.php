@@ -313,42 +313,48 @@ class C_siswa extends CI_Controller {
     }
 
 //sensing
-    public function latihanSensing1()
+    public function latihanSensing1($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
         $data['content'] = 'siswa/sensing1';
+        $data['lsn_id'] = $lsn_id;
         $this->load->view('layout/master', $data);
     }
-    public function latihanSensing2()
+    public function latihanSensing2($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/sensing2';
+        $data['content'] = 'siswa/sensing2';        $data['lsn_id'] = $lsn_id;
+
         $this->load->view('layout/master', $data);
     }
-    public function latihanSensing3()
+    public function latihanSensing3($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/sensing3';
+        $data['content'] = 'siswa/sensing3';        $data['lsn_id'] = $lsn_id;
+
         $this->load->view('layout/master', $data);
     }
 
     //intuitive
-    public function latihanIntuitive1()
+    public function latihanIntuitive1($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/intuitive1';
+        $data['content'] = 'siswa/intuitive1';        $data['lsn_id'] = $lsn_id;
+
         $this->load->view('layout/master', $data);
     }
-    public function latihanIntuitive2()
+    public function latihanIntuitive2($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/intuitive2';
+        $data['content'] = 'siswa/intuitive2';        $data['lsn_id'] = $lsn_id;
+
         $this->load->view('layout/master', $data);
     }
-    public function latihanIntuitive3()
+    public function latihanIntuitive3($lsn_id)
     {
         $data['sidebar'] = 'layout/sidebar';
-        $data['content'] = 'siswa/intuitive3';
+        $data['content'] = 'siswa/intuitive3';        $data['lsn_id'] = $lsn_id;
+
         $this->load->view('layout/master', $data);
     }
     public function pretest()
@@ -787,7 +793,7 @@ class C_siswa extends CI_Controller {
         $data['forum1'] = M_Course_Forum::where('lsn_id',$lsn_id)->first();
         $data['latihan'] = M_Course_Assesment::where('ass_tipe','Exercise')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
         $data['kuis'] = M_Course_Assesment::where('ass_tipe','Kuis')->where('ass_name','LIKE','%'.substr($data['course']->lsn_name,4))->first();
-        
+
         $data['lsn_id'] = $lsn_id;
 
 

@@ -172,17 +172,17 @@ function get_text_content($type, $name) {
                 <ul class="mdl-list">
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing1') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing1/'. $lsn_id) ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 1</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing2') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing2/'. $lsn_id) ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 2</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing3') ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/sensing3/'. $lsn_id) ?>" ><span style="color:white" style="margin-left:20px">Latihan Soal 3</span></a>
                 </span>
                 </li>
                 
@@ -220,12 +220,20 @@ function get_text_content($type, $name) {
                         <div id="demo2" class="collapse">
                         <div class="mdl-card__supporting-text">
                         <p style="color: white">YUK! Catat disini aja materinya..</p>
-            <center><textarea rows="4" cols="55" style="background-color: white;color:#000;">
-                    .....
-            </textarea></center>
-                <div class="form-group">
-               <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
-                </div>
+                        <form method="post" action="<?php echo base_url().'siswa/Content/notes_svcq/'.$lsn_id?>">
+                        <?php
+                        $getnotes=M_User::select('usr_notes')->where('usr_id',$this->session->userdata('id'))->first();
+                        ?>
+                        <textarea rows="4" cols="35" style="background-color: white;color:#000;" name="notes">
+                                <?php
+                                echo $getnotes->usr_notes;
+                                ?>
+                        </textarea>
+                        
+                            <div class="form-group">
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-white">Simpan Catatan</button>
+                            </div>
+                            </form>
                         </div>
 </div>
                     </div>

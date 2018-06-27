@@ -172,7 +172,7 @@ foreach ($contents_example as $content): ?>
         <div class="mdl-card mdl-shadow--2dp trending">
             <div class="mdl-card__title" style="display: block">
             <p style="color: white">YUK! Catat disini aja materinya..</p>
-            <form method="post" action="<?php echo base_url().'siswa/Content/notes/'.$lsn_id?>">
+            <form method="post" action="<?php echo base_url().'siswa/Content/notes_svrq/'.$lsn_id?>">
             <?php
             $getnotes=M_User::select('usr_notes')->where('usr_id',$this->session->userdata('id'))->first();
             ?>
