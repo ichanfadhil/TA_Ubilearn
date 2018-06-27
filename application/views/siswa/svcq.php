@@ -139,7 +139,7 @@ function get_text_content($type, $name) {
                     </ul>
                     <?php endforeach; ?>
                     <?php
-foreach ($contents_example as $content): ?>    
+            foreach ($contents_example as $content): ?>    
                 <ul class="mdl-list" style="margin: 15px;" >
                     <li class="mdl-list__item" style="background-color: #0d0d0d">
                     <span class="mdl-list__item-primary-content">
@@ -259,12 +259,12 @@ foreach ($contents_example as $content): ?>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">4. Hadir dalam forum diskusi</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/'.$forum1->cfr_id) ?>" ><span style="color:white" style="margin-left:20px">4. Hadir dalam forum diskusi</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/15/') ?>" ><span style="color:white" style="margin-left:20px">5. Mengerjakan kuis yang telah disediakan</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/assesment_info/'. $kuis->ass_id) ?>" ><span style="color:white" style="margin-left:20px">5. Mengerjakan kuis yang telah disediakan</span></a>
                 </span>
                 </li>
             </ul>

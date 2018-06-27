@@ -42,6 +42,15 @@ class M_Course_Content extends Eloquent
         return $update->save();
         
     }
+    
+    public function notes_save($data, $usr_id)
+    {
+        $note = M_User::where('usr_id',$usr_id)->first();
+        $note->usr_notes=$data;
+
+        $note->save();
+        
+    }
 
 }
 

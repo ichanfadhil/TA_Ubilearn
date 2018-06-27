@@ -110,7 +110,7 @@ blockquote span{
             </div>
 
             <div class="mdl-card__supporting-text">
-            <audio controls>
+            <audio controls data-toggle="tooltip" data-placement="right" title="Klik lalu pahami materinya." style="font-size: 35px; color: white;">>
                 <source src="<?php echo base_url();?>res/assets/<?php echo $kontent->cnt_source;?>" type="audio/ogg">
                 <source src="<?php echo base_url();?>res/assets/<?php echo $kontent->cnt_source;?>" type="audio/mpeg">
                 cek audio

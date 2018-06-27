@@ -46,6 +46,15 @@ blockquote span{
 </style>
 <?php
 $var  =  $course->lsn_id;
+
+function get_text_content($type, $name) {
+    $euy = M_Course_Content::select('cnt_id', 'cnt_name', 'cnt_type')
+                    ->where('cnt_name','=',$name)
+                    ->where('cnt_type','=',$type)->first();
+
+    return $euy;
+}
+
 ?>
     <script>
     $(function() {
@@ -79,7 +88,7 @@ $var  =  $course->lsn_id;
                         <span class="mdl-list__item-primary-content">
                         <i class="material-icons mdl-list__item-icon" style="font-size: 30px; color: white;"><?php echo "play_circle_filled"?></i>
                         <a href="<?php echo site_url('siswa/content/contents/' . $content->cnt_id)?>">
-                       <img src="<?php echo site_url();?>/res/assets/images/hal.png" align="center" alt="contoh" style="width: 1000px; height: 100px;">
+                       <img src="<?php echo "https://img.youtube.com/vi/".substr($content->cnt_source,32)."/hqdefault.jpg" ?>" align="center" alt="contoh" style="width: 1000px; height: 100px;">
                        </a>
                     &nbsp; <?php echo $content->cnt_name ?>
                     
@@ -87,8 +96,7 @@ $var  =  $course->lsn_id;
                     <b class="mdl-list__item-secondary-action"
                         style="margin-right: 0px">
                         </b>
-                        <a href="<?php echo site_url('siswa/content/contents/35/') ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="large material-icons test" data-toggle="tooltip" data-placement="top" title="Disini kamu bisa melihat materi berupa teks juga loh" style="font-size: 40px; color: white;">text_fields</i></a>
-                    </li>
+                        <a href="<?php echo site_url('siswa/content/contents/' . get_text_content("Text", $content->cnt_name)->cnt_id); ?>" class="btn-floating btn-large waves-effect waves-light blue"><i class="large material-icons test" data-toggle="tooltip" data-placement="top" title="Disini kamu bisa melihat materi berupa teks juga loh" style="font-size: 40px; color: white;">text_fields</i></a>
                     </ul>
                     <?php endforeach; ?>
                     <?php
@@ -161,7 +169,7 @@ $var  =  $course->lsn_id;
                 <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title" style="display: block">
-                        <a href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons" style="color: white;">chat_bubble_outline</i></a>
+                        <a href="<?php echo site_url('siswa/list_thread_siswa/'.$forum1->cfr_id) ?>" class="btn-floating btn-large waves-effect waves-light red" style="float: right;"><i class="material-icons" style="color: white;">chat_bubble_outline</i></a>
                             <h1 class="mdl-card__title-text">YUK !</h1>
                             <p style="color: white">Diskusikan materi belajar ini bersama temanmu..</p>
                             <hr style="background-color: white;"/>
@@ -217,7 +225,7 @@ $var  =  $course->lsn_id;
                 <ul class="mdl-list">
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/13/') ?>" ><span style="color:white" style="margin-left:20px">1. Mengikuti pretest yang telah disediakan</span></a>
+                    <a style="text-decoration:none;" href="<?php echo site_url('siswa/assesment_info/13/') ?>" ><span style="color:white" style="margin-left:20px">1. Mengikuti pretest yang telah disediakan</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
@@ -227,17 +235,17 @@ $var  =  $course->lsn_id;
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/46/') ?>" ><span style="color:white" style="margin-left:20px">3. Mengerjakan latihan soal yang telah disediakan</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/assesment_info/'. $latihan->ass_id) ?>" ><span style="color:white" style="margin-left:20px">3. Mengerjakan latihan soal yang telah disediakan</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/13/') ?>" ><span style="color:white" style="margin-left:20px">4. Hadir dalam forum diskusi</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/list_thread_siswa/'.$forum1->cfr_id) ?>" ><span style="color:white" style="margin-left:20px">4. Hadir dalam forum diskusi</span></a>
                 </span>
                 </li>
                 <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-                <a style="text-decoration:none;" href="<?php echo site_url('siswa/result/15/') ?>" ><span style="color:white" style="margin-left:20px">5. Mengerjakan kuis yang telah disediakan</span></a>
+                <a style="text-decoration:none;" href="<?php echo site_url('siswa/assesment_info/'. $kuis->ass_id) ?>" ><span style="color:white" style="margin-left:20px">5. Mengerjakan kuis yang telah disediakan</span></a>
                 </span>
                 </li>
             </ul>

@@ -247,6 +247,11 @@ class Content extends CI_Controller {
         redirect(site_url('siswa/materi/' . $lsn_id));
     }
 
+    public function notes($lsn_id){
+        $noteya = $this->input->post('notes');
+        $simpan = $this->M_Course_Content->notes_save($noteya,$this->session->userdata('id'));
+        redirect(site_url('siswa/svrq/'. $lsn_id));
+    }
 
 
 

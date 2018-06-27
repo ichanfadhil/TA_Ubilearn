@@ -125,17 +125,17 @@ class M_Learning_Style extends Eloquent
         $ls = "";
 
         //Sensing Intuitive done
-		$cv_nilai = $this->calc($content_visit,20,10,13,16);
-        $cs_nilai = $this->calc($content_stay,17,10,13,15);
-        $xv_nilai = $this->calc($example_visit,17,10,13,15);
-        $xs_nilai = $this->calc($example_stay,17,10,13,15);
-        $sv_nilai = $this->calc($selfass_visit,20,10,13,16);
-        $ss_nilai = $this->calc($selfass_stay,17,10,13,15);
-        $ev_nilai = $this->calc($exercise_visit,20,8,10,14);
-        $qt_nilai = $this->calc($ques_detail,10,5,7,8);
-        $qf_nilai = $this->calc($ques_facts,10,5,7,8);
-        $qd_nilai = $this->calc($ques_develop,10,5,7,8);
-        $qs_nilai = $this->calc($ques_stay_results,10,5,7,8);
+		$cv_nilai = $this->calc($content_visit,20,10,13,16,'-');
+        $cs_nilai = $this->calc($content_stay,17,10,13,15,'-');
+        $xv_nilai = $this->calc($example_visit,17,10,13,15,'+');
+        $xs_nilai = $this->calc($example_stay,17,10,13,15,'-');
+        $sv_nilai = $this->calc($selfass_visit,20,10,13,16,'+');
+        $ss_nilai = $this->calc($selfass_stay,17,10,13,15,'+');
+        $ev_nilai = $this->calc($exercise_visit,20,8,10,14,'+');
+        $qt_nilai = $this->calc($ques_detail,10,5,7,8,'+');
+        $qf_nilai = $this->calc($ques_facts,10,5,7,8,'+');
+        $qd_nilai = $this->calc($ques_develop,10,5,7,8,'-');
+        $qs_nilai = $this->calc($ques_stay_results,10,5,7,8,'+');
 
         $sum = $cv_nilai + $cs_nilai + $xv_nilai + $xs_nilai + $sv_nilai + $ss_nilai + $ev_nilai + $qt_nilai + $qf_nilai +  $qd_nilai + $qs_nilai;
         $hasil1 = $sum/11;
@@ -143,18 +143,18 @@ class M_Learning_Style extends Eloquent
         $norm1 = ($hasil1-1)/2;
 		
         if($norm1 < 0.55){
-            $ls = $ls.'s';
-        }else{
             $ls = $ls.'n';
+        }else{
+            $ls = $ls.'s';
         }
 
         //Visual Verbal done
-		$cv_nilai = $this->calc($content_visit,20,10,13,16);
-        $qg_nilai = $this->calc($ques_graph,10,5,7,8);
-        $qx_nilai = $this->calc($ques_text,10,5,7,8);
-		$fv_nilai = $this->calc($forum_visit,15,5,7,10);
-		$fp_nilai = $this->calc($forum_post,10,2,4,5);
-		$fs_nilai = $this->calc($forum_stay,300,120,140,180); //detik
+		$cv_nilai = $this->calc($content_visit,20,10,13,16,'-');
+        $qg_nilai = $this->calc($ques_graph,10,5,7,8,'+');
+        $qx_nilai = $this->calc($ques_text,10,5,7,8,'-');
+		$fv_nilai = $this->calc($forum_visit,15,5,7,10,'-');
+		$fp_nilai = $this->calc($forum_post,10,2,4,5,'-');
+		$fs_nilai = $this->calc($forum_stay,300,120,140,180,'-'); //detik
 		
         $sum = $cv_nilai + $qg_nilai + $qx_nilai + $fv_nilai + $fp_nilai + $fs_nilai;
         $hasil2 = $sum/6;
@@ -162,23 +162,23 @@ class M_Learning_Style extends Eloquent
         $norm2 = ($hasil2-1)/2;
 		
         if($norm2 < 0.55){
-            $ls = $ls.'v';
-        }else{
             $ls = $ls.'a';
+        }else{
+            $ls = $ls.'v';
         }
 
         //ACtive Reflective done
-		$cv_nilai = $this->calc($content_visit,20,10,13,16); //$value,$max,$min,$nilai1,$nilai2
-		$cs_nilai = $this->calc($content_stay,17,10,13,15);
-		$os_nilai = $this->calc($outline_stay,17,10,13,15);
-		$xs_nilai = $this->calc($example_stay,17,10,13,15);
-		$sv_nilai = $this->calc($selfass_visit,20,10,13,16);
-		$ss_nilai = $this->calc($selfass_stay,17,10,13,15);
-		$ev_nilai = $this->calc($exercise_visit,20,8,11,14);
-        $es_nilai = $this->calc($exercise_stay,17,10,13,15);
-        $qs_nilai = $this->calc($ques_stay_results,10,5,7,8);
-		$fv_nilai = $this->calc($forum_visit,15,5,7,10);
-		$fp_nilai = $this->calc($forum_post,10,2,4,5);
+		$cv_nilai = $this->calc($content_visit,20,10,13,16,'-'); //$value,$max,$min,$nilai1,$nilai2
+		$cs_nilai = $this->calc($content_stay,17,10,13,15,'-');
+		$os_nilai = $this->calc($outline_stay,17,10,13,15,'-');
+		$xs_nilai = $this->calc($example_stay,17,10,13,15,'-');
+		$sv_nilai = $this->calc($selfass_visit,20,10,13,16,'+');
+		$ss_nilai = $this->calc($selfass_stay,17,10,13,15,'-');
+		$ev_nilai = $this->calc($exercise_visit,20,8,11,14,'+');
+        $es_nilai = $this->calc($exercise_stay,17,10,13,15,'+');
+        $qs_nilai = $this->calc($ques_stay_results,10,5,7,8,'-');
+		$fv_nilai = $this->calc($forum_visit,15,5,7,10,'-');
+		$fp_nilai = $this->calc($forum_post,10,2,4,5,'+');
 		
 		
 		$sum = $cv_nilai + $cs_nilai + $os_nilai + $xs_nilai + $sv_nilai + $ss_nilai+ $ev_nilai+ $es_nilai+ $fv_nilai+ $fp_nilai + $qs_nilai;
@@ -187,44 +187,53 @@ class M_Learning_Style extends Eloquent
         $norm3 = ($hasil3-1)/2;
 		
         if($norm3 < 0.55){
-            $ls = $ls.'c';
-        }else{
             $ls = $ls.'r';
+        }else{
+            $ls = $ls.'c';
         }
 
         //Sequential Global done
-        $ov_nilai = $this->calc($outline_visit,17,10,13,15);
-        $os_nilai = $this->calc($outline_stay,17,10,13,15);
-        $qt_nilai = $this->calc($ques_detail,10,5,7,8);
-        $qo_nilai = $this->calc($ques_overview,10,5,7,8);
-        $qi_nilai = $this->calc($ques_interpret,10,5,7,8);
-        $qd_nilai = $this->calc($ques_develop,10,5,7,8);
-        $ns_nilai = $this->calc($nav_skip,10,5,7,8);
-        $no_nilai = $this->calc($nav_overview_visit,10,5,7,8);
+        $ov_nilai = $this->calc($outline_visit,17,10,13,15,'-');
+        $os_nilai = $this->calc($outline_stay,17,10,13,15,'-');
+        $qt_nilai = $this->calc($ques_detail,10,5,7,8,'+');
+        $qo_nilai = $this->calc($ques_overview,10,5,7,8,'-');
+        $qi_nilai = $this->calc($ques_interpret,10,5,7,8,'-');
+        $qd_nilai = $this->calc($ques_develop,10,5,7,8,'-');
+        $ns_nilai = $this->calc($nav_skip,10,5,7,8,'-');
+        $no_nilai = $this->calc($nav_overview_visit,10,5,7,8,'-');
 
         $sum = $ov_nilai + $os_nilai + $qt_nilai + $qo_nilai + $qi_nilai + $qd_nilai+ $ns_nilai+ $no_nilai;
         $hasil4 = $sum/8;
 
-        $norm4 = ($hasi4-1)/2;
+        $norm4 = ($hasil4-1)/2;
 
 
         if($norm4 < 0.55){
-            $ls = $ls.'q';
-        }else{
             $ls = $ls.'g';
+        }else{
+            $ls = $ls.'q';
         }
         return $ls;
     }
 
-public function calc($value,$max,$min,$nilai1,$nilai2){
-        if($value < $min){
+public function calc($value,$max,$min,$nilai1,$nilai2,$dimensi){
+    $nilai_tengah= ($max+$min)/2;    
+    if($value < $min){
             $a = 0; 
-        }else if($value > $min && $value < $nilai1){
-            $a = 1;
-        }else if($value > $nilai1 && $value < $nilai2){
-            $a = 2;
+        }else if($value >= $nilai_tengah){
+            if($dimensi=='+'){
+                $a=3;
+            }else if($dimensi=='-'){
+                $a=1;
+            }
+        }else if($value < $nilai_tengah){
+            if($dimensi=='+'){
+                $a=1;
+            }else if($dimensi=='-'){
+                $a=3;
+            }
         }else {
-            $a = 3;
+            $a = 2;
         }
         return $a;
     }
